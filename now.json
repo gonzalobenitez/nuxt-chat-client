@@ -2,5 +2,8 @@
   "name": "nuxt-chat-client",
   "alias": [
     "nuxt-chat-client"
-  ]
+  ],
+  "env": {
+    "WS_URL": "https://nuxt-chat-server.now.sh"
+  }
 }
