@@ -1,0 +1,35 @@
+:root {
+  --font-sans-serif: "Source Sans Pro", Arial, sans-serif;
+  
+  --background-color: #ffffff;
+  --font-color: #000000;
+  --icon-size: 1rem;
+
+  --btn-primary-color: #000000;
+  --btn-info-color: #17a2b8;
+  --btn-warning-color: #ffc107;
+  --btn-error-color: #dc3545;
+
+  --text-letter-spacing: 0.5px;
+  --card-padding: 20px;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: var(--background-color);
+  font-family: var(--font-sans-serif);
+  font-size: var(--icon-size);
+  letter-spacing: var(--text-letter-spacing);
+  color: var(--font-color);
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  padding: var(--card-padding);
+}

@@ -1,0 +1,53 @@
+{
+  "name": "nuxt-chat-client",
+  "version": "1.0.0",
+  "description": "Peer to peer chat client built using Nuxt.js",
+  "author": "Gonzalo Benitez <info@arvosesh.com>",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "start": "cross-env NODE_ENV=production nuxt start",
+    "test": "ava --serial --verbose",
+    "precommit": "npm run lint",
+    "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "lint:css": "stylelint client/components/**/*.vue",
+    "lint": "npm run lint:js && npm run lint:css",
+    "ci": "npm run lint && npm run build"
+  },
+  "dependencies": {
+    "@nuxtjs/pwa": "^2.0.4",
+    "bluebird": "^3.5.1",
+    "cross-env": "^5.0.1",
+    "feathers": "^2.2.3",
+    "feathers-socketio": "^2.0.1",
+    "lodash": "^4.17.4",
+    "nuxt": "^1.0.0-rc3",
+    "simple-peer": "^8.1.1",
+    "socket.io-client": "^2.0.4",
+    "source-map-support": "^0.4.15",
+    "uuid": "^3.1.0",
+    "uuid-validate": "0.0.2",
+    "vue-compose": "^0.2.0",
+    "vuetify": "^0.17.4"
+  },
+  "devDependencies": {
+    "ava": "^0.24.0",
+    "babel-eslint": "^7.2.3",
+    "eslint": "^4.3.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-html": "^3.1.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "jsdom": "^11.5.1",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-import": "^11.0.0",
+    "stylelint": "^8.3.1",
+    "stylelint-config-standard": "^18.0.0",
+    "stylelint-processor-html": "^1.0.0"
+  }
+}
