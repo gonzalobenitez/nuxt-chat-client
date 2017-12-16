@@ -1,3 +1,4 @@
+import * as constants from '../constants'
 import PeerHandler from '../handlers/peer'
 import Peer from 'simple-peer'
 import { forEach, omit } from 'lodash'
@@ -73,9 +74,9 @@ export const actions = {
   destroyPeers: ({ commit, dispatch }) => {
     commit('destroyPeers', null)
   },
-  sendMessage: ({ commit, dispatch, rootState }, messageJson) => {
-    const message = JSON.stringify({ messageJson })
+  sendMessage: ({ commit, dispatch, rootState }, message) => {
     const peers = rootState.peers.peers
-    forEach(peers, peer => peer.send(message))
+    forEach(peers, peer => peer.send(JSON.stringify({ message })))
+    dispatch('messages/addMessage', { message, userId: constants.ME }, { root: true })
   }
 }

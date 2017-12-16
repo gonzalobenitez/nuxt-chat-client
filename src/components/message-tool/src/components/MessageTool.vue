@@ -3,7 +3,7 @@
     <v-fab-transition>
       <v-btn
         color="cyan accent-2"
-        small
+        medium
         fixed
         bottom
         right
@@ -14,21 +14,23 @@
         <v-icon>edit</v-icon>
       </v-btn>
     </v-fab-transition>
+
     <v-dialog 
       :value="dialogOpen" 
       @input="setDialogOpen" 
       fullscreen
       transition="dialog-bottom-transition"
       :overlay=false
+      scrollable
     >
-      <v-card>
-        <v-toolbar dark color="primary">
-          <v-btn icon @click.native="setDialogOpen(false)" dark>
+      <v-card class="pa-3">
+        <v-toolbar color="cyan accent-2">
+          <v-btn icon @click.native="setDialogOpen(false)">
             <v-icon>close</v-icon>
           </v-btn>
           <v-toolbar-title>Messages</v-toolbar-title>
         </v-toolbar>
-        <v-card-text>
+        <v-card-text ref="scroll">
           <nuxt-message-list
             :messages="messages"
           />
@@ -36,6 +38,7 @@
         <v-card-actions>
           <nuxt-message-form
             :send="send"
+            :isOpen="dialogOpen"
           />
         </v-card-actions>
       </v-card>
@@ -57,6 +60,12 @@ export default {
     'setDialogOpen',
     'messages',
     'send'
-  ]
+  ],
+  watch: {
+    messages: function () {
+      let scroll = this.$refs.scroll
+      scroll.scrollTop = scroll.scrollHeight
+    }
+  }
 }
 </script>

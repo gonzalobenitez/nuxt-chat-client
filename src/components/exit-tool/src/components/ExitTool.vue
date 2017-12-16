@@ -4,7 +4,7 @@
       <v-btn
         dark
         icon
-        small
+        medium
         fixed
         top
         left
@@ -20,7 +20,7 @@
       @input="setDialogOpen"
       max-width="500px"
     >
-      <v-card>
+      <v-card class="pa-3">
         <v-card-title class="headline">{{ label }}</v-card-title>
         <v-card-actions>
           <v-spacer></v-spacer>

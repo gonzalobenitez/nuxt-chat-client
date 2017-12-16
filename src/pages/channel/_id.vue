@@ -15,7 +15,7 @@
           {{ channel.id }}
         </p>
       </div>
-      <div xs12 v-else>
+      <div v-else>
         <ul class="videos">
           <li>
             <nuxt-video-tool

@@ -21,7 +21,7 @@
       @input="setDialogOpen" 
       max-width="500px"
     >
-      <v-card>
+      <v-card class="pa-4">
        <v-card-text>
           <v-text-field 
             ref="copy"

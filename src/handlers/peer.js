@@ -43,10 +43,11 @@ class PeerHandler {
   }
   handleData(object) {
     const { dispatch, user } = this
-    object = JSON.parse(new window.TextDecoder('utf-8').decode(object))
-    console.log(`peer: ${user.id}, message: ${object}`)
-    const message = user.id + ': ' + object.message
-    dispatch('messages/addMessage', message, { root: true })
+    const data = JSON.parse(new window.TextDecoder('utf-8').decode(object))
+    const userId = user.id
+    const message = data.message
+    console.log(`peer: ${userId}, message: ${message}`)
+    dispatch('messages/addMessage', { message, userId }, { root: true })
   }
   handleClose() {
     const { dispatch, user } = this

@@ -3,7 +3,7 @@
     <v-content>
       <v-container fluid fill-height>
         <v-layout align-center justify-center>
-          <v-card>
+          <v-card class="pa-4">
             <v-card-media :src="backgroundUrl" height="300px">
             </v-card-media>
             <v-card-title primary-title>  

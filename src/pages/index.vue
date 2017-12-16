@@ -1,7 +1,7 @@
 <template>
   <v-container fluid fill-height>
     <v-layout align-center justify-center>
-        <v-card>
+        <v-card class="pa-4">
           <v-card-media :src="backgroundUrl" height="300px">
           </v-card-media>
           <v-card-title primary-title>
@@ -19,11 +19,15 @@
                 required
                 :rules="channelIdRules"
               ></v-text-field>
-              <v-btn color="cyan" large
+              <v-btn 
+                color="cyan"
+                large
                 @click="onJoin"
                 :disabled="!valid"
               >Join</v-btn>
-              <v-btn color="primary" large
+              <v-btn 
+                color="primary"
+                large
                 @click="onCreateChannel"
               >Create Channel</v-btn>
             </v-form>

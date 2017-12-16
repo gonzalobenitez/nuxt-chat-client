@@ -11,19 +11,23 @@ export const getters = {
 }
 
 export const mutations = {
-  addMessage(state, { message }) {
-    const id = uniqueId('notification')
+  addMessage(state, { message, userId }) {
+    const id = uniqueId('message')
     state.messages = Object.freeze({
       ...state.messages,
-      [id]: message
+      [id]: {
+        message,
+        userId
+      }
     })
   }
 }
 
 export const actions = {
-  addMessage({ commit, dispatch }, message) {
+  addMessage({ commit, dispatch }, { message, userId }) {
     return commit('addMessage', {
-      message
+      message,
+      userId
     })
   }
 }

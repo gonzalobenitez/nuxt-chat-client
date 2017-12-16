@@ -1,19 +1,54 @@
 <template>
   <v-container fluid>
-    <div class="typer">
-      <input type="text" placeholder="Type a message..." :keyup.enter="send" v-model="content">
-    </div>
+    <v-layout row wrap class="typer">
+      <v-flex xs8>
+        <input 
+          ref="input"
+          type="text"
+          placeholder="Type a message..."
+          @keyup.enter="sendMessage"
+          v-model="content"
+        />
+      </v-flex>
+      <v-flex xs4 class="text-xs-right">
+        <v-btn 
+          color="primary"
+          flat
+          icon
+          class="mr-5"
+          @click="sendMessage"
+        >
+          <v-icon>send</v-icon>
+        </v-btn>
+      </v-flex>
+    </v-layout>
   </v-container>
 </template>
 
 <script>
 export default {
   props: [
-    'send'
+    'send',
+    'isOpen'
   ],
   data() {
     return {
       content: ''
+    }
+  },
+  watch: {
+    isOpen: function () {
+      this.$refs.input.focus()
+    }
+  },
+  methods: {
+    sendMessage() {
+      if (this.content) {
+        this.send(this.content)
+        this.content = ''
+      }
+
+      this.$refs.input.focus()
     }
   }
 }
@@ -21,10 +56,11 @@ export default {
 
 <style>
 .typer {
+  position: absolute;
+  bottom: 0;
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  bottom: 0;
   height: 4.9rem;
   width: 100%;
   background-color: #fff;
@@ -32,13 +68,10 @@ export default {
 
 .typer input[type=text] {
   background-color: transparent;
-  position: absolute;
-  bottom: 0;
-  left: 2.5rem;
   padding: 1rem;
-  width: 80%;
   border: none;
   outline: none;
+  width: 100%;
   font-size: 1.25rem;
 }
 </style>
