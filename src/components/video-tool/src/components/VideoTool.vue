@@ -1,15 +1,14 @@
 <template>
-  <div class="video-container" v-bind:class="{ active: isActive }">
+  <v-container fluid :class="{ active: isActive }">
     <video
       autoplay
       playsinline
       ref="video"
     />
-  </div>
+  </v-container>
 </template>
 
 <script>
-
 export default {
   props: [
     'stream',
@@ -39,8 +38,9 @@ export default {
 </script>
 
 <style scoped>
-
-.video-container {
+.container {
+  padding: 0;
+  margin: 0;
   border-radius: 50%;
   display: inline-block;
   margin-right: 10px;
@@ -49,7 +49,7 @@ export default {
   z-index: 2;
 }
 
-.video-container video {
+.container video {
   border-radius: 50%;
   object-fit: cover;
   cursor: pointer;
@@ -57,7 +57,7 @@ export default {
   height: 100%;
 }
 
-.video-container.active {
+.container.active {
   background-color: transparent;
   border-radius: 0;
   position: fixed;
@@ -76,9 +76,8 @@ export default {
   transition: opacity 1s;
 }
 
-.video-container.active video {
+.container.active video {
   border-radius: 0;
   cursor: inherit;
 }
-
 </style>

@@ -45,7 +45,7 @@ export default {
   },
   data() {
     return {
-      backgroundUrl: backgroundUrl,
+      backgroundUrl,
       valid: true,
       channelId: '',
       channelIdRules: [
