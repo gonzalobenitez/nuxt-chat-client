@@ -2,7 +2,6 @@
   <v-container fluid>
     <v-fab-transition>
       <v-btn
-        dark
         icon
         medium
         fixed
