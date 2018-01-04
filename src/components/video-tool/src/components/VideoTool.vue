@@ -3,6 +3,7 @@
     <video
       autoplay
       playsinline
+      :muted="isActive"
       ref="video"
     />
   </v-container>

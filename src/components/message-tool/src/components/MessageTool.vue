@@ -26,7 +26,7 @@
       <v-card class="pa-3">
         <v-toolbar color="cyan accent-2">
           <v-btn icon @click.native="setDialogOpen(false)">
-            <v-icon>close</v-icon>
+            <v-icon>keyboard_arrow_left</v-icon>
           </v-btn>
           <v-toolbar-title>Messages</v-toolbar-title>
         </v-toolbar>

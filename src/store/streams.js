@@ -28,6 +28,9 @@ export const mutations = {
     }
 
     state.streams = Object.freeze(omit(state.streams, [userId]))
+  },
+  destroyStreams(state) {
+    state.streams = Object.freeze({})
   }
 }
 
@@ -40,5 +43,8 @@ export const actions = {
   },
   removeStream({ commit, dispatch }, userId) {
     return commit('removeStream', userId)
+  },
+  destroyStreams({ commit, dispatch }) {
+    return commit('destroyStreams', null)
   }
 }

@@ -21,14 +21,14 @@
             <nuxt-video-tool
               :stream="streams[me]"
               :isActive="active === me"
-              @click="setActive(me)"
+              @click.native="setActive(me)"
             />
           </li>
           <li v-for="(peer, userId) in peers" v-if="streams[userId] && peer">
             <nuxt-video-tool
               :stream="streams[userId]"
               :isActive="active === userId"
-              @click="setActive(userId)"
+              @click.native="setActive(userId)"
             />
           </li>
         </ul>
