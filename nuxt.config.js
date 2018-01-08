@@ -65,7 +65,7 @@ module.exports = {
     /*
     ** Add vendor packages
     */
-    vendor: ['bluebird', 'feathers/client', 'feathers-socketio/client', 'socket.io-client', 'vuetify'],
+    vendor: ['bluebird', '@feathersjs/feathers', '@feathersjs/socketio-client', 'socket.io-client', 'vuetify'],
     /*
     ** Extract css
     */

@@ -1,5 +1,5 @@
-import feathers from 'feathers/client'
-import socketio from 'feathers-socketio/client'
+import feathers from '@feathersjs/feathers'
+import socketio from '@feathersjs/socketio-client'
 import io from 'socket.io-client'
 // create socket
 const socket = io(process.env.WS_URL, { path: '/ws' })

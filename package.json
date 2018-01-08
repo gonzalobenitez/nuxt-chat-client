@@ -17,11 +17,11 @@
     "ci": "npm run lint && npm run build"
   },
   "dependencies": {
+    "@feathersjs/feathers": "^3.0.4",
+    "@feathersjs/socketio-client": "^1.0.2",
     "@nuxtjs/pwa": "^2.0.4",
     "bluebird": "^3.5.1",
     "cross-env": "^5.0.1",
-    "feathers": "^2.2.3",
-    "feathers-socketio": "^2.0.1",
     "lodash": "^4.17.4",
     "nuxt": "^1.0.0-rc3",
     "serve": "^6.4.3",
